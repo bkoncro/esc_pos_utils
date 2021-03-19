@@ -10,7 +10,8 @@ import 'dart:convert';
 import 'dart:typed_data' show Uint8List;
 import 'package:hex/hex.dart';
 import 'package:image/image.dart';
-import 'package:gbk_codec/gbk_codec.dart';
+// import 'package:gbk_codec/gbk_codec.dart';
+import 'package:enough_convert/enough_convert.dart';
 import 'package:esc_pos_utils/esc_pos_utils.dart';
 import 'enums.dart';
 import 'commands.dart';
@@ -76,7 +77,9 @@ class Generator {
     if (!isKanji) {
       return latin1.encode(text);
     } else {
-      return Uint8List.fromList(gbk_bytes.encode(text));
+      // return Uint8List.fromList(gbk_bytes.encode(text));
+      final codec = const GbkCodec(allowInvalid: false);
+      return Uint8List.fromList(codec.encode(text));
     }
   }
 

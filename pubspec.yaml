@@ -11,8 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   hex: ^0.2.0
-  gbk_codec: ^0.3.2
+  # gbk_codec: ^0.3.2
   image: ^3.0.0-nullsafety.0
+  enough_convert: ^1.2.0
 
 dev_dependencies:
   flutter_test:
